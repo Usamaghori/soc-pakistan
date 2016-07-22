@@ -1,12 +1,75 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type='text/javascript' src="bootstrap.min.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Bootstrap Starter</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
 </head>
 <body>
-<input type = "textbox" id = "text"></br>
-<input type = "submit" id = "btn"></br>
+<h1 id = "tname"> New Topic </h1></br>
+Topic:<input type = "textbox" id = "title"></br>
+User:<input type = "textbox" id = "user"></br>
+<input type = "submit" id = "btn" value = "create"></br>
 <div id = "container">
 </div>
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  See threads
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Topics</h4>
+      </div>
+      <div class="modal-body">
+        <table class = "col-xs-9" id = "tab">
+<thead></thead>
+<tbody>
+</tbody>
+</table>
+<br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBvhgYZ4MxV7CxbsW_rogk1oWk6i2KGn2Y",
+    authDomain: "fir-b3afa.firebaseapp.com",
+    databaseURL: "https://fir-b3afa.firebaseio.com",
+    storageBucket: "fir-b3afa.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
 <script src="main.js"></script>
+
 </body>
 </html>
+
