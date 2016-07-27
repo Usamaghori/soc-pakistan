@@ -3,7 +3,8 @@ var DATA = [];
 $("#btn").click(function()
 {
    var text = $("#text").val()
-    DATA.push(text);
+   var un = $("#un").val()
+    DATA.push(un+":<br>"+text);
     Render(DATA);
 	save();
 	load();
@@ -12,7 +13,7 @@ $("#btn").click(function()
 		function save()
 	   {
 	   //localStorage.myData = JSON.stringify(DATA);
-$.ajax({
+ $.ajax({
 	    url: '/setTodo', 
 	    type: 'POST', 
 	    contentType: 'application/json', 
@@ -26,8 +27,8 @@ function Render(data)
 	   $('#container').empty();
 	for (var i=0;i<data.length;i++)
 	{		 
-     $('#container').append('<div id = "'+i+'"><input type="checkbox">' + data[i]+'<br></div>')
-	 $('#'+i).click(function()
+     $('#container').append('<p id = "'+i+'">' + data[i]+'<br></p>')
+	/*$('#'+i).click(function()
 	 {
 		var index = $(this).attr("id");
 		//$(this).remove();
@@ -37,7 +38,7 @@ function Render(data)
          data.splice(index, 1);
         }
 		Render(DATA);
-     });	
+     });*/	
     }
 };
 	   

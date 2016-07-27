@@ -1,9 +1,9 @@
-var port = 80;
+var port = process.env.PORT || 80;
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
-var DATA = ["item 1","item 2","item 3"];
+var DATA = [];
 
 app.use(express.static('public'));
 
